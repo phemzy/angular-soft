@@ -1,0 +1,9 @@
+<input type="text" (keyup.enter)="addMessage()" [(ngModel)]="message">
+
+<h1>All Messages</h1>
+<p>
+  <app-message (deleteEmitter)="deleteMessageEvent($event)" *ngFor="let message of messages; let id = index;" [message]="message" [id]="id">
+  </app-message>
+</p>
+
+<ng-content></ng-content>
